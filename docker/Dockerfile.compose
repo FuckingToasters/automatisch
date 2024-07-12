@@ -8,4 +8,8 @@ COPY ./compose-entrypoint.sh /compose-entrypoint.sh
 RUN dos2unix /compose-entrypoint.sh
 
 EXPOSE 3000
+
+# Ensure the script has executable permissions
+RUN chmod +x /compose-entrypoint.sh
+
 ENTRYPOINT ["sh", "/compose-entrypoint.sh"]
